@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.wintech.datacenter.trafficcabinet.mapper.AlarmdataMapper">
+ 	<insert id="addAlarmdata" parameterType="Alarmdata">
+ 		insert into alarmdata (deviceid,doorone,doortwo,camera,lockstate,zhendong,power,alarmtime) values (#{deviceid},#{doorone},#{doortwo},#{camera},#{lockstate},#{zhendong},#{power},#{alarmtime})
+ 	</insert>
+ </mapper>

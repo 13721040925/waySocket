@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 1、读取jdbc配置文件 -->
+	<properties resource="jdbc.properties" />
+	<!-- 2、配置mybatis的运行行为 -->
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<setting name="autoMappingBehavior" value="FULL" />
+		<setting name="cacheEnabled" value="false" />
+	</settings>
+	<!-- 3、配置别名 -->
+	<typeAliases>
+		<package name="com.wintech.datacenter.trafficcabinet.pojo" />
+	</typeAliases>
+	<!-- 4、配置数据源 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 配置事务 -->
+			<transactionManager type="JDBC" />
+			<!-- 配置数据源的连接属性 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${pass}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 5、配置mapper映射文件 -->
+	<mappers>
+		<package name="com.wintech.datacenter.trafficcabinet.mapper"/>
+	</mappers>
+</configuration>
